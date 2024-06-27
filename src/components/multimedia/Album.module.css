@@ -1,0 +1,30 @@
+.album {
+    display: grid;
+    justify-items: center;
+    width: 70%;
+    background-color: rgba(0, 0, 0, .4);
+    box-shadow: 5px 3px 6px 2px;
+    padding: 15px;
+    gap: 10px;
+    overflow: auto;
+}
+.four {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+}
+.three {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+}
+
+.hei {
+    height: 300px;
+    width: 200px;
+}
+
+.wid {
+    height: 200px;
+    width: 300px;
+}
