@@ -12,7 +12,7 @@ function Home(){
                 Em busca de trazer maior profissionalização e desempenho, seu filho <a className='alex'><strong>Alexsander Shineyder</strong></a> mantém seu legado expandindo sua equipe e área de atuação.</p>
                 </section>
                 <section className={styles.descricao}>
-                    <img src={Familia} />
+                    <img src={Familia} alt=''/>
                 </section>
             </section>
             <section className={styles.eventos}>

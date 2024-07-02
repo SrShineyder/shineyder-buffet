@@ -24,30 +24,30 @@ const Album = () => {
             <h1><span>Shineyder Buffet</span></h1>
             <h3>Antigo <i>Nilson Buffet</i></h3>
             <div className={styles.four}>
-                <img src={Adriano} className={styles.hei}/>
-                <img src={Victoria} className={styles.hei}/>
-                <img src={PaieFilho} className={styles.hei}/>
-                <img src={Abraco} className={styles.hei}/>
+                <img src={Adriano} alt='' className={styles.hei}/>
+                <img src={Victoria} alt='' className={styles.hei}/>
+                <img src={PaieFilho} alt='' className={styles.hei}/>
+                <img src={Abraco} alt='' className={styles.hei}/>
             </div>
             <div className={styles.three}>
-                <img src={PaieFilha} className={styles.wid}/>
-                <img src={Discurso} className={styles.wid}/>
-                {/* <img src={Olhar} className={styles.wid}/> */}
-                <img src={EVotos} className={styles.wid}/>
+                <img src={PaieFilha} alt='' className={styles.wid}/>
+                <img src={Discurso} alt='' className={styles.wid}/>
+                {/* <img src={Olhar} alt='' className={styles.wid}/> */}
+                <img src={EVotos} alt='' className={styles.wid}/>
             </div>
             <div className={styles.four}>
-                <img src={MVotos} className={styles.hei}/>
-                <img src={Alianca} className={styles.hei}/>
-                <img src={Oracao} className={styles.hei}/>
-                {/* <img src={Beijo} className={styles.hei}/> */}
-                <img src={Saida} className={styles.hei}/>
+                <img src={MVotos} alt='' className={styles.hei}/>
+                <img src={Alianca} alt='' className={styles.hei}/>
+                <img src={Oracao} alt='' className={styles.hei}/>
+                {/* <img src={Beijo} alt='' className={styles.hei}/> */}
+                <img src={Saida} alt='' className={styles.hei}/>
             </div>
             <div className={styles.three}>
-                <img src={Madrinhas} className={styles.wid}/>
-                <img src={Padrinhos} className={styles.wid}/>
-                <img src={Familia} className={styles.wid}/>
+                <img src={Madrinhas} alt='' className={styles.wid}/>
+                <img src={Padrinhos} alt='' className={styles.wid}/>
+                <img src={Familia} alt='' className={styles.wid}/>
             </div>
-            <img src={Noiva} className={styles.hei}/>
+                <img src={Noiva} alt='' className={styles.hei}/>
         </div>
     )
 }

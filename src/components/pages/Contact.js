@@ -27,8 +27,8 @@ function Contact(){
             <form method="POST" className={styles.form} id='aContato' action="mailto:alexsandershineyder2014@hotmail.com">
                 <fieldset>
                 <fieldset id="identificacao"><legend>Identificação do Usuário</legend>
-                    <p><label htmlFor="cNome">Nome  </label>
-                    <input type="text" name="tNome" id="cNome" size="40" maxLength="50" placeholder="Nome Completo" /></p>
+                    <p><label htmlFor="name">Nome  </label>
+                    <input type="text" name="tNome" id="name" size="40" maxLength="50" placeholder="Nome Completo" /></p>
                     <p><label htmlFor="cMail">E-mail  </label>
                     <input type="email" name="tMail" id="cMail" size="40" maxLength="40" /></p>
                     <p><label htmlFor="cNum">Número  </label>
