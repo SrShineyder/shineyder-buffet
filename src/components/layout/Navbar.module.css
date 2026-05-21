@@ -1,28 +1,55 @@
 .navbar {
     display: flex;
     justify-content: space-between;
-    background-color: #222;
-    padding: 1em;
-    border-bottom: 2px #606060 solid;
+    align-items: center;
+    background-color: #111;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid rgba(255,255,255,.12);
+}
+.brand {
+    display: flex;
+    align-items: center;
+}
+.logo {
+    height: 60px;
+    width: 60px;
+    border-radius: 14px;
+    object-fit: cover;
+}
+.brandText {
+    display: flex;
+    flex-direction: column;
+    margin-left: 0.9rem;
+}
+.brandName {
+    color: #f2c94c;
+    font-size: 1.45rem;
+    font-weight: 700;
+    letter-spacing: 0.16rem;
+    text-transform: uppercase;
+}
+.brandSub {
+    color: #eee;
+    font-size: 0.9rem;
+    letter-spacing: 0.04rem;
+    margin-top: 0.15rem;
 }
 .list {
     display: flex;
     list-style: none;
-    align-items: flex-start;
+    align-items: center;
+    margin: 0;
+    padding: 0;
 }
 .item {
-    margin-right: 1em;
+    margin-left: 1.4rem;
 }
 .item a {
     color: #fff;
     text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
 }
 .item a:hover {
-    color: aqua;
-    text-decoration: none;
-}
-
-.logo {
-    height: 80px;
-    width: 80px;
+    color: #f2c94c;
 }

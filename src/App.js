@@ -2,6 +2,7 @@ import {BrowserRouter as Router, Routes, Route} from "react-router-dom"
 
 import Home from './components/pages/Home'
 import Multimedia from './components/pages/Multimedia'
+import Menu from './components/pages/Menu'
 import Contact from './components/pages/Contact'
 
 import Navbar from './components/layout/Navbar'
@@ -16,6 +17,7 @@ function App() {
         <Routes>
             <Route path="/" element={<Home />}/>
             <Route path="/multimedia" element={<Multimedia />}/>
+            <Route path="/menu" element={<Menu />}/>
             <Route path="/contact" element={<Contact />}/>
         </Routes>
       </Container>
