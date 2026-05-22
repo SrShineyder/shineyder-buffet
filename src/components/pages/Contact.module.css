@@ -2,49 +2,198 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 70%;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
     background-color: rgba(0, 0, 0, .4);
-    box-shadow: 5px 3px 6px 2px;
-    /*background-color: rgb(157, 201, 213);*/
+    box-shadow: 5px 3px 6px 2px rgba(0, 0, 0, .25);
+    border-radius: 1rem;
+    padding: 1.5rem;
 }
-.information{
-    display: flex;
+.information {
+    width: 100%;
     background-color: rgb(194, 242, 255);
-    margin-bottom: 50px;
-    padding: 10px;
+    margin-bottom: 30px;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+.contactsGroup {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(200px, 1fr));
+    gap: 1rem;
 }
 .fornecedor {
     display: flex;
     justify-content: space-evenly;
     font-size: 1.5em;
     list-style-type: none;
-    margin: 10px 0px 0px 0px;
+    margin: 10px 0 0 0;
     padding: 5px;
 }
 
 .contact_container h1 {
-    font-size: 2.5em;
-    margin-bottom: 0.5em;
+    font-size: 2.3rem;
+    margin-bottom: 0.8rem;
+    text-align: center;
 }
 .contact_container h1 span {
     color: #ffff27;
     padding: 0 0.2em;
 }
 .contact_container p {
-    margin-bottom: 1.5em;
-    color: #6d6b6b;
+    margin-bottom: 1rem;
+    color: #4d4b4b;
 }
-input {
-    border: 2px solid #3E445B;
-    border-radius: 5px;
-    font-size: 14px;
-    padding: 5px;
-    margin: 10px;
+
+.budget_grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 2rem;
+    width: 100%;
 }
+.menu_column,
+.budget_column {
+    background-color: rgba(255, 255, 255, 0.08);
+    padding: 1.2rem;
+    border-radius: 1rem;
+}
+.menu_column h2,
+.budget_column legend {
+    color: #f2c94c;
+}
+.menu_cards {
+    display: grid;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+.card {
+    padding: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 1rem;
+    background-color: rgba(255, 255, 255, 0.04);
+    cursor: pointer;
+    transition: transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+.card:hover {
+    transform: translateY(-2px);
+}
+.selectedCard {
+    border-color: #f2c94c;
+    background-color: rgba(242, 201, 76, 0.12);
+}
+.card h3 {
+    color: #f2c94c;
+    margin-bottom: 0.8rem;
+}
+.card ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.card li {
+    margin-bottom: 0.7rem;
+    line-height: 1.6;
+}
+.menuInfo {
+    margin-top: 1rem;
+    color: #e3e1d1;
+    line-height: 1.6;
+}
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+fieldset {
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 1rem;
+    padding: 1rem;
+}
+legend {
+    font-size: 1.1rem;
+    padding: 0 0.5rem;
+    font-weight: 700;
+}
+label {
+    display: block;
+    margin-bottom: 0.4rem;
+    color: #f5f1e8;
+}
+label span {
+    color: #ff4858;
+}
+input,
 select {
-    border: 2px solid #3E445B;
-    border-radius: 5px;
-    font-size: 14px;
-    padding: 5px;
-    margin: 5px;
+    width: 100%;
+    border: 2px solid #3e445b;
+    border-radius: 0.6rem;
+    font-size: 0.95rem;
+    padding: 0.8rem;
+    margin-bottom: 0.8rem;
+    background-color: rgba(255, 255, 255, 0.92);
+}
+.radioGroup {
+    display: grid;
+    gap: 0.6rem;
+    margin: 1rem 0;
+}
+.radioGroup p {
+    margin: 0;
+    font-weight: 700;
+    color: #f5f1e8;
+}
+.radioGroup label {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-weight: 400;
+}
+.timeRow {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+}
+.errorMsg {
+    color: #ff4858;
+    margin-top: -0.4rem;
+    margin-bottom: 0.8rem;
+    font-size: 0.9rem;
+}
+.warningMsg {
+    color: #f2c94c;
+    font-size: 0.95rem;
+    margin-top: -0.2rem;
+    margin-bottom: 0.8rem;
+}
+.submitButton {
+    width: 100%;
+    background-color: #f2c94c;
+    border: none;
+    border-radius: 0.8rem;
+    color: #1b1a1a;
+    font-weight: 700;
+    padding: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+.submitButton:hover {
+    background-color: #d9b44a;
+}
+@media (max-width: 900px) {
+    .budget_grid {
+        grid-template-columns: 1fr;
+    }
+    .contactsGroup {
+        grid-template-columns: 1fr;
+    }
+}
+@media (max-width: 640px) {
+    .contact_container {
+        width: 100%;
+        padding: 1rem;
+    }
+    input,
+    select {
+        font-size: 0.9rem;
+    }
 }

@@ -4,7 +4,7 @@ function Menu(){
     return(
         <section className={styles.menu_container}>
             <div className={styles.hero}>
-                <h1>Menu Orientativo</h1>
+                <h1>CARDÁPIO</h1>
                 <p>Opções de cardápio para eventos com buffet completo, criados para inspirar e servir de referência na sua escolha.</p>
             </div>
             <div className={styles.cards}>
