@@ -226,6 +226,35 @@ function Contact() {
         }
     }
 
+    // Opções para ícones de contato: abrir app ou copiar endereço
+    const [showOptions, setShowOptions] = useState({ email: false, phone: false, whatsapp: false })
+
+    const toggleOptions = (type) => {
+        setShowOptions((prev) => ({ ...prev, [type]: !prev[type] }))
+    }
+
+    const copyToClipboard = async (text) => {
+        try {
+            await navigator.clipboard.writeText(text)
+            alert('Copiado para a área de transferência')
+        } catch (err) {
+            alert('Não foi possível copiar. Selecione e copie manualmente.')
+        }
+    }
+
+    const openLink = (url) => {
+        window.open(url, '_blank', 'noopener,noreferrer')
+    }
+
+    const emailAddress = 'alexsandershineyder2014@hotmail.com'
+    const phoneNumber = '+5527988041610'
+    const whatsappNumber = '5527988041610'
+    const whatsappMessage = encodeURIComponent('Olá, gostaria de um orçamento.')
+
+    const handleOpenEmail = () => openLink(`mailto:${emailAddress}`)
+    const handleOpenPhone = () => (window.location.href = `tel:${phoneNumber}`)
+    const handleOpenWhatsApp = () => openLink(`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`)
+
     const selectedEventData = eventData.find((e) => e.key === selectedEvent)
     const guestWarning = form.guests && Number(form.guests) > 0 && Number(form.guests) < 40
 
@@ -240,34 +269,36 @@ function Contact() {
                 <form onSubmit={handleSubmit} noValidate>
                     <div className={styles.columns_wrapper}>
                         <aside className={styles.event_column}>
-                            <h2>Tipo de Evento</h2>
-                            <label htmlFor="event">
-                                Tipo de Evento <span>*</span>
-                            </label>
-                            <select
-                                id="event"
-                                name="event"
-                                value={selectedEvent}
-                                onChange={handleEventTypeChange}
-                            >
-                                {eventData.map((eventInfo) => (
-                                    <option key={eventInfo.key} value={eventInfo.key}>
-                                        {eventInfo.title}
-                                    </option>
-                                ))}
-                            </select>
+                            <fieldset>
+                                <legend>Evento</legend>
+                                <label htmlFor="event">
+                                    Tipo de Evento <span>*</span>
+                                </label>
+                                <select
+                                    id="event"
+                                    name="event"
+                                    value={selectedEvent}
+                                    onChange={handleEventTypeChange}
+                                >
+                                    {eventData.map((eventInfo) => (
+                                        <option key={eventInfo.key} value={eventInfo.key}>
+                                            {eventInfo.title}
+                                        </option>
+                                    ))}
+                                </select>
 
-                            {selectedEventData && (
-                                <div className={styles.menu_description}>
-                                    <h3>{selectedEventData.title}</h3>
-                                    <ul>
-                                        {selectedEventData.items.map((item) => (
-                                            <li key={item}>{item}</li>
-                                        ))}
-                                    </ul>
-                                </div>
-                            )}
-                        <fieldset>
+                                {selectedEventData && (
+                                    <div className={styles.menu_description}>
+                                        <h3>{selectedEventData.title}</h3>
+                                        <ul>
+                                            {selectedEventData.items.map((item) => (
+                                                <li key={item}>{item}</li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                )}
+                            </fieldset>
+                            <fieldset>
                                 <legend>Detalhes do Evento</legend>
 
                                 <label htmlFor="guests">
@@ -528,7 +559,7 @@ function Contact() {
                                 />
                             </fieldset>
                             <button type="submit" className={styles.submit_button}>
-                                    Enviar Orçamento
+                                    Solicitar Orçamento
                             </button>
                         </aside>
                     </div>
@@ -550,9 +581,39 @@ function Contact() {
                         </div>
                     </div>
                     <ul className={styles.social_icons}>
-                        <li><FaEnvelope /></li>
-                        <li><FaPhone /></li>
-                        <li><FaWhatsapp /></li>
+                        <li>
+                            <button type="button" onClick={() => toggleOptions('email')} aria-label="Email">
+                                <FaEnvelope />
+                            </button>
+                            {showOptions.email && (
+                                <div className={styles.icon_options}>
+                                    <button type="button" onClick={handleOpenEmail}>Abrir email</button>
+                                    <button type="button" onClick={() => copyToClipboard(emailAddress)}>Copiar</button>
+                                </div>
+                            )}
+                        </li>
+                        <li>
+                            <button type="button" onClick={() => toggleOptions('phone')} aria-label="Telefone">
+                                <FaPhone />
+                            </button>
+                            {showOptions.phone && (
+                                <div className={styles.icon_options}>
+                                    <button type="button" onClick={handleOpenPhone}>Ligar</button>
+                                    <button type="button" onClick={() => copyToClipboard(phoneNumber)}>Copiar</button>
+                                </div>
+                            )}
+                        </li>
+                        <li>
+                            <button type="button" onClick={() => toggleOptions('whatsapp')} aria-label="WhatsApp">
+                                <FaWhatsapp />
+                            </button>
+                            {showOptions.whatsapp && (
+                                <div className={styles.icon_options}>
+                                    <button type="button" onClick={handleOpenWhatsApp}>Abrir WhatsApp</button>
+                                    <button type="button" onClick={() => copyToClipboard(whatsappNumber)}>Copiar</button>
+                                </div>
+                            )}
+                        </li>
                     </ul>
                 </fieldset>
             </section>
