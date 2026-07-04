@@ -353,3 +353,23 @@ select:focus {
         font-size: 0.9rem;
     }
 }
+/* ========== RESPONSIVIDADE ========== */
+
+/* Celulares */
+@media screen and (max-width: 768px) {
+  .contactForm {
+    padding: 15px !important;
+  }
+
+  .contactForm input,
+  .contactForm textarea,
+  .contactForm select {
+    width: 100% !important;
+    padding: 10px !important;
+    margin: 5px 0 !important;
+  }
+
+  .contactForm button {
+    width: 100% !important;
+  }
+}

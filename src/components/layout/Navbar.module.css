@@ -53,3 +53,30 @@
 .item a:hover {
     color: #f2c94c;
 }
+/* ========== RESPONSIVIDADE ========== */
+
+/* Celulares */
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column !important;
+    padding: 1rem !important;
+    gap: 10px !important;
+  }
+
+  .brand {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+
+  .brandName {
+    font-size: 1.2rem !important;
+  }
+
+  /* Se houver links de navegação, empilhe */
+  .navLinks {
+    flex-direction: column !important;
+    width: 100% !important;
+    align-items: center !important;
+    gap: 8px !important;
+  }
+}

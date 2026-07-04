@@ -24,3 +24,22 @@
     font-weight: bold;
     color: #f86b69;
 }
+/* ========== RESPONSIVIDADE ========== */
+
+/* Celulares */
+@media screen and (max-width: 768px) {
+  .footer {
+    flex-direction: column !important;
+    text-align: center !important;
+    padding: 1.5rem !important;
+  }
+
+  .footerLinks {
+    flex-direction: column !important;
+    gap: 10px !important;
+  }
+
+  .footerSocial {
+    justify-content: center !important;
+  }
+}

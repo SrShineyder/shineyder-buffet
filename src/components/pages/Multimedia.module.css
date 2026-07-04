@@ -21,3 +21,29 @@
     color: #f86b69;
     padding: 0 0.2em;
 }
+/* ========== RESPONSIVIDADE ========== */
+
+/* Tablets */
+@media screen and (max-width: 1024px) {
+  .multimediaGrid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+/* Celulares */
+@media screen and (max-width: 768px) {
+  .multimediaGrid {
+    grid-template-columns: 1fr !important;
+    gap: 15px !important;
+  }
+
+  .multimediaItem {
+    width: 100% !important;
+  }
+
+  .multimediaItem img,
+  .multimediaItem video {
+    width: 100% !important;
+    height: auto !important;
+  }
+}

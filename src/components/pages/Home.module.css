@@ -134,3 +134,32 @@
         max-width: 200px;
     }
 }
+/* ========== RESPONSIVIDADE ========== */
+
+/* Tablets */
+@media screen and (max-width: 1024px) {
+  .homeGrid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+/* Celulares */
+@media screen and (max-width: 768px) {
+  .homeGrid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+
+  .homeContainer {
+    padding: 20px !important;
+  }
+
+  .homeTitle {
+    font-size: 1.8rem !important;
+    text-align: center !important;
+  }
+
+  .homeSubtitle {
+    text-align: center !important;
+  }
+}
